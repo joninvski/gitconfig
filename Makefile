@@ -1,2 +1,2 @@
 all:
-	ln -fs `pwd` ${HOME}/.gitconfig
+	ln -fs `pwd`/gitconfig ${HOME}/.gitconfig
