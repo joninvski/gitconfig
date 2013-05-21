@@ -4,6 +4,7 @@
 	user = joninvski
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    staged = diff --cached
 [color]
     ui = auto
 [user]
@@ -11,3 +12,5 @@
 	email = trindade.joao@gmail.com
 [core]
 	pager = less -FRSX
+[push]
+	default = simple
