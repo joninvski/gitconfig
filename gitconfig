@@ -1,16 +1,16 @@
 [merge]
-	tool = vimdiff
+   tool = vimdiff
 [github]
-	user = joninvski
+   user = joninvski
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    staged = diff --cached
+   lg = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+   staged = diff --cached
 [color]
-    ui = auto
+   ui = auto
 [user]
-	name = Joao Trindade
-	email = trindade.joao@gmail.com
+   name = Joao Trindade
+   email = trindade.joao@gmail.com
 [core]
-	pager = less -FRSX
+   pager = less -FRSX
 [push]
-	default = simple
+   default = simple
