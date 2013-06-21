@@ -4,6 +4,7 @@
     user = joninvski
 [alias]
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    staged = diff --cached
     status = status -sb
 [color]
     ui = auto
