@@ -12,4 +12,5 @@
    name = Joao Trindade
    email = trindade.joao@gmail.com
    pager = less -FRSX
-   default = simple
+[push]
+	default = simple
