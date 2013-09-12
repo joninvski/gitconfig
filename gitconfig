@@ -13,4 +13,4 @@
    email = trindade.joao@gmail.com
    pager = less -FRSX
 [push]
-	default = simple
+	default = current
