@@ -8,6 +8,8 @@
    st = status -sb
 [color]
    ui = auto
+[diff]
+   tool = vimdiff
 [user]
    name = Joao Trindade
    email = trindade.joao@gmail.com
