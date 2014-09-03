@@ -5,7 +5,8 @@
 [alias]
    lg = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
    plog = log -p
-   slog = log --stat
+   slog = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat
+   l = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
    staged = diff --cached
    st = status -sb
    a = add
@@ -14,6 +15,8 @@
    up = !git fetch origin && git rebase origin/master
    ir = !git rebase -i origin/master
    who = shortlog -s --
+   merged = branch --merged
+   notmerged = branch --no-merged
 
 [color]
    ui = auto
@@ -25,3 +28,5 @@
    pager = less -FRSX
 [push]
 	default = current
+[help]
+	autocorrect = 1
