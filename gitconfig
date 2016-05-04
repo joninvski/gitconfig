@@ -1,7 +1,13 @@
-[merge]
-   tool = vimdiff
+[user]
+   name = Joao Trindade
+   email = trindade.joao@gmail.com
+   pager = less -FRSX
 [github]
    user = joninvski
+[merge]
+   tool = vimdiff3
+[diff]
+   tool = nvim -d
 [alias]
    lg = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
    plog = log -p
@@ -9,6 +15,7 @@
    l = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
    staged = diff --cached
    st = status -sb
+   stat = show --stat --oneline
    a = add
    aa= !git add -u && git add . && git status
    cob = checkout -b
@@ -17,18 +24,17 @@
    who = shortlog -s --
    merged = branch --merged
    notmerged = branch --no-merged
-
+   wc = whatchanged -p --abbrev-commit --pretty=medium
+   today = "!sh -c 'git log --reverse --no-merges --branches=* --date=local --after=\"yesterday 11:59PM\" --author=\"`git config --get user.name`\"'"
+   yesterday = "!sh -c 'git log --reverse --no-merges --branches=* --date=local --after=\"yesterday 00:00AM\" --before=\"today 06:00AM\" --author=\"`git config --get user.name`\"'"
 [color]
    ui = auto
-[diff]
-   tool = vimdiff
-[user]
-   name = Joao Trindade
-   email = trindade.joao@gmail.com
-   pager = less -FRSX
+   status = always
 [push]
-	default = current
+   default = current
 [help]
-	autocorrect = 1
+   autocorrect = 1
 [core]
-	excludesfile = ~/.gitignore_global
+   excludesfile = ~/.gitignore_global
+[mergetool]
+   path = nvim
