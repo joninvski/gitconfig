@@ -26,7 +26,10 @@
    name = Joao Trindade
    email = trindade.joao@gmail.com
    pager = less -FRSX
+   signingkey = 5DA19DE4
 [push]
 	default = current
 [help]
 	autocorrect = 1
+[commit]
+	 gpgsign = true
