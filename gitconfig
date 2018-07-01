@@ -48,5 +48,6 @@
    excludesfile = ~/.gitignore_global
 [commit]
 	 gpgsign = true
+   verbose = true
 [mergetool]
    path = nvim
