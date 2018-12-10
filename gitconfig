@@ -1,52 +1,55 @@
 [user]
-   name = Joao Trindade
-   email = trindade.joao@gmail.com
-   pager = less -FRSX
+    name = Joao Trindade
+    email = trindade.joao@gmail.com
+    pager = less -FRSX
 [github]
-   user = joninvski
+    user = joninvski
 [merge]
-   tool = vimdiff3
+    tool = vimdiff3
 [diff]
-   tool = nvim -d
+    tool = nvim -d
 [alias]
-   lg = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-   plog = log -p
-   slog = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat
-   l = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
-   staged = diff --cached
-   st = status -sb
-   stat = show --stat --oneline
-   a = add
-   aa= !git add -u && git add . && git status
-   cob = checkout -b
-   up = !git fetch origin && git rebase origin/master
-   ir = !git rebase -i origin/master
-   who = shortlog -s --
-   merged = branch --merged
-   notmerged = branch --no-merged
-   delete-merged-branches = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
-   c = commit -s
-   wc = whatchanged -p --abbrev-commit --pretty=medium
-   today = "!sh -c 'git log --reverse --no-merges --branches=* --date=local --after=\"yesterday 11:59PM\" --author=\"`git config --get user.name`\"'"
-   yesterday = "!sh -c 'git log --reverse --no-merges --branches=* --date=local --after=\"yesterday 00:00AM\" --before=\"today 06:00AM\" --author=\"`git config --get user.name`\"'"
-   pushf = push --force-with-lease
+    lg = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    plog = log -p
+    slog = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat
+    l = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
+    staged = diff --cached
+    st = status -sb
+    stat = show --stat --oneline
+    a = add
+    aa= !git add -u && git add . && git status
+    cob = checkout -b
+    up = !git fetch origin && git rebase origin/master
+    ir = !git rebase -i origin/master
+    who = shortlog -s --
+    merged = branch --merged
+    notmerged = branch --no-merged
+    delete-merged-branches = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
+    c = commit -s
+    wc = whatchanged -p --abbrev-commit --pretty=medium
+    today = "!sh -c 'git log --reverse --no-merges --branches=* --date=local --after=\"yesterday 11:59PM\" --author=\"`git config --get user.name`\"'"
+    yesterday = "!sh -c 'git log --reverse --no-merges --branches=* --date=local --after=\"yesterday 00:00AM\" --before=\"today 06:00AM\" --author=\"`git config --get user.name`\"'"
+    pushf = push --force-with-lease
+    merge-log = "!f() { git log --stat \"$1^..$1\"; }; f"
 [color]
-   ui = auto
-   status = always
+    ui = auto
+    status = always
 [user]
-   name = Joao Trindade
-   email = trindade.joao@gmail.com
-   pager = less -FRSX
-   signingkey = 5DA19DE4
+    name = Joao Trindade
+    email = trindade.joao@gmail.com
+    pager = less -FRSX
+    signingkey = FAE97133114ADCFA55C6477AAB1C0FF9D78E0CD6
 [push]
-	 default = current
+    default = current
 [help]
-   autocorrect = 1
+    autocorrect = 1
 [difftool]
-	 prompt = false
+    prompt = false
 [core]
-   excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
+    editor = vim
 [commit]
-	 gpgsign = true
+    gpgsign = true
+    verbose = true
 [mergetool]
-   path = nvim
+    path = nvim
