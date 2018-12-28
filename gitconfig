@@ -50,3 +50,5 @@
     editor = vim
 [mergetool]
     path = nvim
+[commit]
+    verbose = true
