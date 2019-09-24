@@ -31,9 +31,21 @@
     yesterday = "!sh -c 'git log --reverse --no-merges --branches=* --date=local --after=\"yesterday 00:00AM\" --before=\"today 06:00AM\" --author=\"`git config --get user.name`\"'"
     pushf = push --force-with-lease
     merge-log = "!f() { git log --stat \"$1^..$1\"; }; f"
+
+    # Stolen from https://github.com/fcsonline/dotfiles/blob/master/git/gitconfig. See https://hackernoon.com/be-125-more-efficient-with-git-60556a1ce971 for instructions
+    recent = !git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ | head -n 100
+    fixit = "!f() { git commit --fixup=$1; GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash $1~1; }; f"
+    pam = !BRANCH=`git recent | fzf` && git checkout ${BRANCH}
+    pamgrep = !sh -c 'FILES=`git grep -l -A 0 -B 0 $1 $2 | fzf -x -m` && vim -O `echo ${FILES} | cut -d':' -f1 | xargs`' -
+    pamvimlog = !HASH=`git log --pretty=oneline | head -n 50 | fzf` && HASHZ=`echo ${HASH} | awk '{ print $1 }'` && FILES=`git show --pretty='format:' --name-only $HASHZ | grep -v -e '^$' | fzf -x -m` && vim -O ${FILES}
+    pamfix = !HASH=`git log --pretty=oneline | head -n 100 | fzf` && git fixit `echo ${HASH} | awk '{ print $1 }'`
+    padd = !git ls-files -m -o --exclude-standard | fzf --print0 -m | xargs -0 -t -o git add
 [color]
     ui = auto
-    status = always
+    status = auto
+    diff = auto
+    branch = auto
+    interactive = auto
 [user]
     name = Joao Trindade
     email = trindade.joao@gmail.com
