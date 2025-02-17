@@ -4,10 +4,12 @@
     pager = less -FRSX
 [github]
     user = joninvski
-[merge]
-    tool = vimdiff3
+[difftool]
+    prompt = true
 [diff]
-    tool = nvim -d
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [alias]
     lg = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     plog = log -p
@@ -56,19 +58,26 @@
     signingkey = FAE97133114ADCFA55C6477AAB1C0FF9D78E0CD6
 [push]
     default = current
+    autoSetupRemote = true
 [help]
     autocorrect = 1
 [difftool]
     prompt = false
 [core]
     excludesfile = ~/.gitignore_global
-    editor = vim
+    editor = nvim
 [mergetool]
-    path = nvim
+    path = vimdiff
 [commit]
     verbose = true
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[init]
+    defaultBranch = master
+[pull]
+    rebase = true
+[merge]
+    tool = nvimdiff
